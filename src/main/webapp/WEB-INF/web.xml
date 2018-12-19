@@ -4,6 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
 </web-app>
 
   <!--<servlet>-->
@@ -16,13 +17,5 @@
   <!--</servlet-mapping>-->
 
 
-  <!--<servlet>-->
-  <!--<servlet-name>list</servlet-name>-->
-  <!--<servlet-class>work.controller.ListServlet</servlet-class>-->
-  <!--</servlet>-->
-  <!--<servlet-mapping>-->
-  <!--<servlet-name>list</servlet-name>-->
-  <!--<url-pattern>/list</url-pattern>-->
-  <!--</servlet-mapping>-->
 
 
