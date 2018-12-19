@@ -9,7 +9,7 @@
   Time: 21:44
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <title>Title</title>
@@ -18,9 +18,31 @@
 <body>
 
     欢迎${user.username}<br><a href="exit">退出</a>
-    ${list}
+    <table>
+        <thead>
+        <tr>
+            <th>商品编号</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品图片</th>
+            <th>商品描述</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+    </table>
+    <%--${list}--%>
 <table>
-    <tbody id="tbody">
+    <tbody>
+    <c:forEach items="${list}" var="p">
+        <tr>
+            <td>${p.productId}</td>
+            <td>${p.productName}</td>
+            <td>${p.productDes}</td>
+            <td><img src="${p.url}" alt="fh"></td>
+            <td>${p.price}</td>
+            <td><a href="delete?product_id=${p.productId}">删除</a>&nbsp;|&nbsp;<a href="update?product_id=${p.productName}">修改</a></td>
+        </tr>
+    </c:forEach>
 
     </tbody>
 </table>

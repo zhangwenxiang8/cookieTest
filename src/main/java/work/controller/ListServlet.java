@@ -38,7 +38,7 @@ public class ListServlet extends HttpServlet {
         List<Product> lists = service.getLists();       //整个Product表的查询
 
         req.setAttribute("list", lists);    //req.转发 将kv值传到Jsp页面才不会乱码(write流或重定向都会造成乱码)
-
+                System.out.println(lists);
         if (u == null) {
             User user = userservice.getOne(uname);
             session.setAttribute("user", user);

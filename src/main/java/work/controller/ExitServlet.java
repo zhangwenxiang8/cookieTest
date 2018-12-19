@@ -4,10 +4,12 @@ package work.controller;
 import work.utilTest.CookieUtil;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.Map;
 
+@WebServlet("/exit")
 public class ExitServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
