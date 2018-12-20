@@ -66,5 +66,25 @@ public class ProductDAOimpl implements IProductDAO {
         return JdbcUtil.CUD("update product set product_name=?,price=?,product_des=?,url=? where product_id=?",product.getProductName(),product.getPrice(),product.getProductDes(),product.getUrl(),product.getProductId());
     }
 
+    @Override
+    public List<Product> Resulset(final String text) {
+        return JdbcUtil.R("select * from product where product_name like concat('%',?,'%')", new RowMap<Product>() {
+            @Override
+            public Product RowMapping(ResultSet rs) {
+                Product p=new Product();
+                try {
+                    p.setProductName(rs.getString("product_name"));
+                    p.setPrice(rs.getDouble("price"));
+                    p.setProductDes(rs.getString("product_des"));
+                    p.setUrl(rs.getString("url"));
+                    p.setProductId(rs.getInt("id"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return p;
+            }
+        },text);
+    }
+
 
 }

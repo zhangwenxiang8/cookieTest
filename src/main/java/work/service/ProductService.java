@@ -10,4 +10,5 @@ public interface ProductService {
     public int delete(int id);
     public Product getOne(int id);
     public int update(Product product);
+    public List<Product> Resulet(String text);
 }

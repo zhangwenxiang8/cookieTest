@@ -33,4 +33,12 @@ public class ProductServiceimpl implements ProductService {
     public int update(Product product) {
         return dao.update(product);
     }
+
+    @Override
+    public List<Product> Resulet(String text) {
+        return dao.Resulset(text);
+    }
+
+
 }
+

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/path.jsp"%>   <%--引入文件 注意加"/"--%>
 <html>
 <head>
     <title>Title</title>
@@ -23,7 +24,7 @@
     <br>
     <input type="button" value="注册" disabled="disabled" id="btn">  <%--disabled 按钮不生效 点击效果--%>
 </form>
-<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"> </script>
+<script type="text/javascript" src="${path}jquery/jquery-3.3.1.min.js"> </script>
 <script>
 
 

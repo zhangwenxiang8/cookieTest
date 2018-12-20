@@ -10,4 +10,5 @@ public interface IProductDAO {
     public int delete(int id);
     public Product getOne(int id);  //单个查找
     public int update(Product product);//修改   Product对象
+    public List<Product> Resulset(String text);
 }

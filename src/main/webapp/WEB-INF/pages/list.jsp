@@ -16,60 +16,88 @@
 
 </head>
 <body>
-
-    欢迎${user.username}<br><a href="exit">退出</a>
-    <table>
-        <thead>
-        <tr>
-            <th>商品编号</th>
-            <th>商品名称</th>
-            <th>商品价格</th>
-            <th>商品图片</th>
-            <th>商品描述</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-    </table>
-    <%--${list}--%>
+<form method="post" >
+    <input type="text" name="text" value="${text}">
+    <input type="submit" value="搜索">
+</form>
 <table>
-    <tbody>
-    <c:forEach items="${list}" var="p">
-        <tr>
-            <td>${p.productId}</td>
-            <td>${p.productName}</td>
-            <td>${p.productDes}</td>
-            <td><img src="${p.url}" alt="fh"></td>
-            <td>${p.price}</td>
-            <td><a href="delete?product_id=${p.productId}">删除</a>&nbsp;|&nbsp;<a href="update?product_id=${p.productName}">修改</a></td>
-        </tr>
-    </c:forEach>
 
+        <tbody>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>des</td>
+        <td>图片</td>
+        <td>price</td>
+    </tr>
+    </tbody>
+
+    <tbody>
+   <c:forEach items="${lists}" var="p">
+   <tr>
+        <td>${p.productId}</td>
+        <td>${p.productName}</td>
+        <td>${p.productDes}</td>
+        <td>${p.url}</td>
+        <td>${p.price}</td>
+    </tr>
+   </c:forEach>
     </tbody>
 </table>
 
+<%--${lists}--%>
 
 
+<%--欢迎${user.username}<br><a href="exit">退出</a>--%>
+<%--<table>--%>
+<%--<thead>--%>
+<%--<tr>--%>
+<%--<th>商品编号</th>--%>
+<%--<th>商品名称</th>--%>
+<%--<th>商品价格</th>--%>
+<%--<th>商品图片</th>--%>
+<%--<th>商品描述</th>--%>
+<%--<th>操作</th>--%>
+<%--</tr>--%>
+<%--</thead>--%>
+<%--</table>--%>
+<%--&lt;%&ndash;${list}&ndash;%&gt;--%>
+<%--<table>--%>
+<%--<tbody>--%>
+<%--<c:forEach items="${list}" var="p">--%>
+<%--<tr>--%>
+<%--<td>${p.productId}</td>--%>
+<%--<td>${p.productName}</td>--%>
+<%--<td>${p.productDes}</td>--%>
+<%--<td><img src="${p.url}" alt="fh"></td>--%>
+<%--<td>${p.price}</td>--%>
+<%--<td><a href="delete?product_id=${p.productId}">删除</a>&nbsp;|&nbsp;<a href="update?product_id=${p.productName}">修改</a></td>--%>
+<%--</tr>--%>
+<%--</c:forEach>--%>
+
+<%--</tbody>--%>
+<%--</table>--%>
 
 
 <%--<script type="text/javascript" src="../../jquery/jquery-3.3.1.min.js"> </script>--%>
 <%--<script type="text/javascript">--%>
 
-    <%--$(function () {--%>
-        <%--$.ajax({--%>
-            <%--url:"list",--%>
-            <%--type:"get",--%>
-            <%--dataType:"json",   //指定返回值类型--%>
-            <%--success:function (data) {--%>
-               <%--$(data).each(function (index,element) {--%>
-                   <%--var $tr=$("<tr></tr>");--%>
+<%--$(function () {--%>
+<%--$.ajax({--%>
+<%--url:"list",--%>
+<%--type:"get",--%>
+<%--dataType:"json",   //指定返回值类型--%>
+<%--success:function (data) {--%>
+<%--$(data).each(function (index,element) {--%>
+<%--var $tr=$("<tr></tr>");--%>
 
-                                        <%--//拼接的格式,获取url和price内的值--%>
-                   <%--$tr.append($("<td>"+$(element)[0].url+"</td>")).append($("<td>"+$(element)[0].price+"</td>"));--%>
-                    <%--$("#tbody").append($tr)--%>
-               <%--})--%>
-            <%--}--%>
-        <%--})--%>
-    <%--})--%>
+<%--//拼接的格式,获取url和price内的值--%>
+<%--$tr.append($("<td>"+$(element)[0].url+"</td>")).append($("<td>"+$(element)[0].price+"</td>"));--%>
+<%--$("#tbody").append($tr)--%>
+<%--})--%>
+<%--}--%>
+<%--})--%>
+<%--})--%>
 <%--</script>--%>
 
 </body>
